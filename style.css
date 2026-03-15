@@ -60,6 +60,22 @@ strong, b, h1, h2, h3, h4, h5, h6 {
   font-size: 15px;
   color: #fff;
   letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-rooster {
+  height: 28px;
+  width: auto;
+  background: #fff;
+  padding: 4px;
+  border-radius: 6px;
+  transition: transform 0.2s;
+}
+
+.nav-rooster:hover {
+  transform: scale(1.15);
 }
 
 .topbar .nav-links {
@@ -95,19 +111,20 @@ strong, b, h1, h2, h3, h4, h5, h6 {
 }
 
 /* ---- Home page ---- */
-.home-header {
-  padding: 40px 0 24px;
+.home-hero {
+  padding: 48px 0 32px;
   margin-bottom: 32px;
+  text-align: center;
 }
 
-.home-header h1 {
+.home-hero h1 {
   font-family: var(--mono);
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
   margin-bottom: 4px;
 }
 
-.home-header p {
+.home-hero p {
   color: var(--text-muted);
   font-size: 14px;
 }
