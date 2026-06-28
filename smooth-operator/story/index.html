@@ -10,19 +10,19 @@
   <meta property="og:url" content="https://www.rooster-labs.com/smooth-operator/story">
   <meta property="og:type" content="article">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16.png">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
   <div class="topbar">
     <div class="topbar-inner">
-      <a href="/" class="site-name"><img src="/rooster.png" alt="" class="nav-rooster">rooster labs</a>
+      <a href="../../" class="site-name"><img src="../../rooster.png" alt="" class="nav-rooster">rooster labs</a>
       <div class="nav-links">
-        <a href="/">projects</a>
+        <a href="../../">projects</a>
         <span class="nav-sep">|</span>
-        <a href="/smooth-operator">smooth operator</a>
+        <a href="../">smooth operator</a>
       </div>
     </div>
   </div>
@@ -32,36 +32,23 @@
       <h1>Smooth Operator</h1>
       <p class="tagline">Why I built a native DJI mission planner for Mac and iPhone.</p>
       <div class="project-subnav">
-        <a href="/smooth-operator">about</a>
-        <a href="/smooth-operator/story/" class="active">story</a>
-        <a href="/smooth-operator/support.html">support</a>
-        <a href="/smooth-operator/privacy.html">privacy</a>
+        <a href="../">about</a>
+        <a href="./" class="active">story</a>
+        <a href="../support.html">support</a>
+        <a href="../privacy.html">privacy</a>
       </div>
     </div>
 
     <article class="content story-content">
-      <p class="story-link">Link to app: <a href="https://apps.apple.com/au/app/drone-smooth-operator/id6760623759">https://apps.apple.com/au/app/drone-smooth-operator/id6760623759</a></p>
+      <p>I started Smooth Operator because I wanted to plan DJI missions somewhere other than my phone. Smooth Operator is a native Mac OS and iOS mission planning application for DJI drones that use the DJI Fly app.</p>
 
-      <p>I started Smooth Operator because I wanted to plan DJI missions somewhere other than my phone. Smooth Operator is a native macOS and iOS mission planning application for DJI drones that use the DJI Fly app.</p>
+      <p>An ideal Smooth Operator workflow starts with your Mac. Using your mouse pointer you can create waypoints, add points of interest, verify your route with different map imagery and air space information. After a user completes their mission, he or she can save the mission to their iCloud. Saving the mission to your iCloud enables a user to load the mission onto their iPhone using Smooth Operator iOS. Smooth Operator iOS has almost feature parity with Mac OS, (plans to get to full parity are in work) and a user can verify any last details. Now the user can go to the 'database' tab. On this tab you can adjust for your 'launch altitude' and then save the mission to DJI Fly. No manual file manipulation!</p>
 
-      <p>An ideal Smooth Operator workflow starts with your Mac. Using your mouse pointer, you can create waypoints, add points of interest, and verify your route with different map imagery and airspace information. After a user completes their mission, they can save the mission to iCloud. Saving the mission to iCloud enables the user to load the mission onto their iPhone using Smooth Operator iOS.</p>
+      <p>Before Smooth Operator you had a few options to create a mission. Those include Litchi, Maven, Dronelink, and Rainbow. Typically in their workflow, you could create a mission but you would then have to manually change files on your iPhone for DJI Fly to recognize the new mission. DJI Fly is the only iOS app that can fly newer DJI consumer drones. Luckily, DJI Fly's app filesystem can be accessed by Smooth Operator (and any other app).</p>
 
-      <p>Smooth Operator iOS has almost feature parity with macOS, with plans to reach full parity in progress, and the user can verify any last details. Now the user can go to the database tab. On this tab, they can adjust for launch altitude and then save the mission to DJI Fly. No manual file manipulation.</p>
+      <p>DJI Fly mission plans are recorded in two forms. First they are placed in a sqlite database for cataloging/metadata. But the full mission plans are saved as a KMZ file in a nearby directory. KMZ is the mission plan and the source of truth for the complete route. The database is located at, '&lt;dji-fly-dir&gt;/wayline_mission/mission_db/wpmz.sqlite3'. KMZ files are located at '&lt;dji-fly-dir&gt;/wayline_mission/&lt;missionId&gt;/&lt;missionId&gt;.kmz'. I don't know why there are two forms to save the same mission, but at a high level. The database holds the uuid of the KMZ file, its file path, and some of the data of the KMZ. And the KMZ holds the complete picture of the mission.</p>
 
-      <p>Before Smooth Operator, you had a few options to create a mission. Those include Litchi, Maven, Dronelink, and Rainbow. Typically in their workflow, you could create a mission but would then have to manually change files on your iPhone for DJI Fly to recognize the new mission. DJI Fly is the only iOS app that can fly newer DJI consumer drones. Luckily, DJI Fly's app filesystem can be accessed by Smooth Operator, and by any other app.</p>
-
-      <p>DJI Fly mission plans are recorded in two forms. First, they are placed in a SQLite database for cataloging and metadata. But the full mission plans are saved as a KMZ file in a nearby directory. KMZ is the mission plan and the source of truth for the complete route.</p>
-
-      <p>The database is located at:</p>
-      <pre><code>&lt;dji-fly-dir&gt;/wayline_mission/mission_db/wpmz.sqlite3</code></pre>
-
-      <p>KMZ files are located at:</p>
-      <pre><code>&lt;dji-fly-dir&gt;/wayline_mission/&lt;missionId&gt;/&lt;missionId&gt;.kmz</code></pre>
-
-      <p>I do not know why there are two forms to save the same mission, but at a high level, the database holds the UUID of the KMZ file, its file path, and some of the data from the KMZ. The KMZ holds the complete picture of the mission.</p>
-
-      <p>It was interesting to see that a DJI mission is simply two zipped XML files. To add actions to the mission, you add XML blocks to an XML file with appropriate values. So in all, this is just a fancy XML manipulator. But a useful one.</p>
-
+      <p>It was interesting to see that a DJI mission is simply two zipped up xml files. To add actions to the mission was to just add xml blocks to an xml file with appropriate values. So in all, this is just a fancy xml manipulator. But a useful one!</p>
     </article>
   </div>
 
@@ -69,9 +56,9 @@
     <div class="footer-inner">
       <p>&copy; 2026 rooster labs</p>
       <div class="footer-links">
-        <a href="/smooth-operator/story/">story</a>
-        <a href="/smooth-operator/support.html">support</a>
-        <a href="/smooth-operator/privacy.html">privacy</a>
+        <a href="./">story</a>
+        <a href="../support.html">support</a>
+        <a href="../privacy.html">privacy</a>
         <a href="mailto:samalaniz25@gmail.com">contact</a>
       </div>
     </div>
