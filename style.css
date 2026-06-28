@@ -328,6 +328,34 @@ strong, b, h1, h2, h3, h4, h5, h6 {
   text-decoration: underline;
 }
 
+.story-content {
+  text-transform: none;
+}
+
+.story-content p {
+  margin-bottom: 16px;
+}
+
+.story-content .story-link {
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+.story-content pre {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  margin: 8px 0 18px;
+  overflow-x: auto;
+  padding: 10px 12px;
+}
+
+.story-content code {
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
 .effective-date {
   color: var(--text-faint);
   font-family: var(--mono);
