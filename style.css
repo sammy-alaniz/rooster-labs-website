@@ -341,16 +341,21 @@ strong, b, h1, h2, h3, h4, h5, h6 {
   font-size: 13px;
 }
 
-.story-video {
+.video-embed {
   aspect-ratio: 16 / 9;
   margin: 8px 0 16px;
   max-width: 100%;
 }
 
-.story-video iframe {
+.video-embed iframe {
   border: 0;
   height: 100%;
   width: 100%;
+}
+
+/* Keep the story video small so the text stays the main page content. */
+.story-content .story-video {
+  width: 360px;
 }
 
 .story-content pre {
