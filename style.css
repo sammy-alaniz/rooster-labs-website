@@ -300,6 +300,95 @@ strong, b, h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 
+/* ---- App Store page ---- */
+.app-store-card {
+  background:
+    radial-gradient(circle at top right, rgba(191, 87, 0, 0.16), transparent 42%),
+    var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(34, 34, 34, 0.08);
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 136px 1fr;
+  overflow: hidden;
+  padding: 28px;
+  position: relative;
+}
+
+.app-store-card::after {
+  background: var(--accent);
+  content: "";
+  height: 3px;
+  inset: 0 0 auto;
+  position: absolute;
+}
+
+.app-store-art {
+  align-items: center;
+  aspect-ratio: 1;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding: 16px;
+}
+
+.app-store-art img {
+  height: auto;
+  width: 100%;
+}
+
+.app-store-details {
+  align-self: center;
+}
+
+.content .app-store-eyebrow {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.app-store-card h2 {
+  font-size: 20px;
+  margin: 0 0 8px;
+}
+
+.content .app-store-copy {
+  margin-bottom: 18px;
+  max-width: 430px;
+}
+
+.app-store-badge-link {
+  display: inline-block;
+  line-height: 0;
+}
+
+.app-store-badge {
+  height: 48px;
+  transition: filter 0.15s, transform 0.15s;
+  width: auto;
+}
+
+.app-store-badge-link:hover .app-store-badge {
+  filter: drop-shadow(0 6px 12px rgba(34, 34, 34, 0.18));
+  transform: translateY(-1px);
+}
+
+.content .app-store-note {
+  color: var(--text-faint);
+  font-family: var(--mono);
+  font-size: 11px;
+  margin-top: 12px;
+  text-align: center;
+}
+
 /* ---- Content pages (support, privacy) ---- */
 .content {
   padding: 8px 0 48px;
@@ -355,6 +444,17 @@ strong, b, h1, h2, h3, h4, h5, h6 {
 
 /* Keep the story video small so the text stays the main page content. */
 .story-content .story-video {
+  aspect-ratio: auto;
+  display: flex;
+  justify-content: center;
+  margin: 8px auto 16px;
+  width: 100%;
+}
+
+.story-content .story-video iframe {
+  aspect-ratio: 16 / 9;
+  height: auto;
+  max-width: 100%;
   width: 360px;
 }
 
@@ -450,6 +550,27 @@ footer p {
 
   .project-header h1 {
     font-size: 18px;
+  }
+
+  .project-subnav {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  .app-store-card {
+    grid-template-columns: 1fr;
+    padding: 24px 20px;
+    text-align: center;
+  }
+
+  .app-store-art {
+    margin: 0 auto;
+    width: 124px;
+  }
+
+  .content .app-store-copy {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   footer .footer-inner {
